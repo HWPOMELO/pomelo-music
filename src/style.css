@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6ee7b7;
+  --color-bg: #f0fdfa;
+  --color-card: #ffffff;
+  --color-textM: #0f172a;
+  --color-textS: #94a3b8;
+}
+
+.dark {
+  --color-primary: #86efac;
+  --color-bg: #1e293b;
+  --color-card: #273449;
+  --color-textM: #f8fafc;
+  --color-textS: #cbd5e1;
+}
+
+@layer utilities {
+  .TRA {
+    @apply cursor-pointer transition-all ease-in-out hover:scale-110;
+  }
+
+  .TRAProg {
+    @apply cursor-pointer transition-transform ease-in-out hover:scale-106;
+  }
+}
+
+@layer components {
+  .PHeader {
+    @apply border-textM/10 fixed z-50 flex h-24 w-full items-center gap-8 border-b-2 px-8 text-2xl backdrop-blur-xl;
+  }
+
+  .PButton {
+    @apply border-textM/10 h-16 w-36 rounded-xl border text-xl leading-16;
+  }
+
+  .PMusicCard {
+    @apply bg-card shadow-textS border-textM/20 mb-16 h-128 w-96 overflow-hidden rounded-2xl border p-4 hover:shadow-2xl/50;
+  }
+
+  .PLinkCard {
+    @apply bg-card border-textM/10 hover:bg-textM hover:text-bg mb-16 block h-24 w-48 rounded-2xl border text-center text-xl leading-24;
+  }
+
+  .PPlayer {
+    @apply border-textM/10 fixed bottom-0 flex h-32 w-full items-center gap-8 border-t-2 px-8 text-2xl backdrop-blur-xl;
+  }
+}
