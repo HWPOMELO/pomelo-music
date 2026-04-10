@@ -4,7 +4,7 @@
   <TrackList id="tracklist" />
   <Playlist id="playlist" />
   <FindMe id="findme" />
-  <Friendship id="friendship" />
+  <Friendship />
   <Footer />
   <Player />
 </template>
