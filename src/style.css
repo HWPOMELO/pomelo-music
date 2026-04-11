@@ -36,7 +36,7 @@
   }
 
   .PMusicCard {
-    @apply bg-card shadow-textS border-textM/20 mb-16 h-128 w-96 overflow-hidden rounded-2xl border p-4 hover:shadow-2xl/50;
+    @apply bg-card shadow-textS border-textM/20 mb-16 h-116 w-96 overflow-hidden rounded-2xl border p-4 hover:shadow-2xl/50;
   }
 
   .PLinkCard {

@@ -6,8 +6,8 @@
             'background-image': `url(${item.img})`
         }">
         </div>
-        <div class="px-4 text-center overflow-hidden mt-8">
-            <h2 class="text-textM text-2xl">{{ item.title }}</h2>
+        <div class="px-4 text-center overflow-hidden">
+            <h2 class="text-textM text-2xl w-full text-nowrap">{{ item.title }}</h2>
             <p class=" text-xl">{{ item.artist }}</p>
         </div>
     </div>
