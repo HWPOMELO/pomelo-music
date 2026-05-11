@@ -1,6 +1,6 @@
 <template>
-    <div class="w-lg">
-        <p @click="toggleMute" class="TRA inline-block ml-36">{{ muteIcon }}</p>
+    <div class="flex justify-between items-center w-64">
+        <p @click="toggleMute" class="TRA">{{ muteIcon }}</p>
         <div class="w-64 h-4 inline-block ml-8">
             <div v-if="isMute" class="TRA rounded-xl h-full bg-textS w-full"></div>
             <ProgressBar v-else :maxValue="1" :currentValue="volume" @update="handleVolume"></ProgressBar>

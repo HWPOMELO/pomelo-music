@@ -1,8 +1,8 @@
 <template>
     <audio ref="audio" :src="works[currentSongId - 1].link" />
-    <div class="PPlayer h-32 justify-between">
+    <div class="PPlayer">
         <PlayerInfo :currentSongId="currentSongId" :works="works" />
-        <PlayerProgress :audio="audio"/>
+        <PlayerProgress :audio="audio" />
         <PlayerVolume :audio="audio" />
     </div>
 </template>

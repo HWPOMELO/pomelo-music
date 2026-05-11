@@ -2,7 +2,7 @@
     <div class="TRA PMusicCard duration-10" @click="handleClick(item.id)" ref="card"
         @mousemove="e => moveCard(e.clientX, e.clientY)" @mouseleave="resetCard">
         <div class="aspect-square bg-contain rounded-xl mb-4" :style="{
-            'mix-blend-mode': isMoving ? 'screen' : 'normal',
+            'mix-blend-mode': isMoving ? 'soft-light' : 'normal',
             'background-image': `url(${item.img})`
         }">
         </div>
@@ -28,11 +28,17 @@ const handleClick = (id) => currentSongId.value = id
 const moveCard = (x, y) => {
     isMoving.value = true
     const cp = card.value.getBoundingClientRect()
-    const ry = (x - cp.x - (cp.width / 2)) / speed
-    const rx = (y - cp.y - (cp.height / 2)) / speed * -1
+    const deltaX = x - (cp.left + cp.width / 2)
+    const deltaY = y - (cp.top + cp.height / 2)
+    const ry = deltaX / speed
+    const rx = -deltaY / speed
     card.value.style.transform = `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg)`
-    const deg = (x * y) / 1000
-    card.value.style.background = `linear-gradient(${deg}deg, #fff, rgba(0, 0, 0, 0)`;
+    const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 180
+    card.value.style.background = `linear-gradient(${angle}deg, 
+        rgba(255,255,255,0.1) 0%, 
+        rgba(255,255,255,0.5) 50%, 
+        rgba(255,255,255,0.1) 100%)`
 }
+
 const resetCard = () => { card.value.style.transform = "perspective(1200px) rotateX(0) rotateY(0)", card.value.style.background = null, isMoving.value = false }
 </script>

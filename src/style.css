@@ -44,6 +44,6 @@
   }
 
   .PPlayer {
-    @apply border-textM/10 fixed bottom-0 flex h-32 w-full items-center gap-8 border-t-2 px-8 text-2xl backdrop-blur-xl;
+    @apply border-textM/10 fixed bottom-0 flex h-32 w-full items-center justify-between gap-8 border-t-2 px-8 text-2xl backdrop-blur-xl;
   }
 }
